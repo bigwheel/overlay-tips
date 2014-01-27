@@ -1,0 +1,22 @@
+{
+  "sources": {
+    "elasticsearch": {
+      "locked_version": "0.3.7"
+    },
+    "build-essential": {
+      "locked_version": "1.4.2"
+    },
+    "xml": {
+      "locked_version": "1.2.0"
+    },
+    "java": {
+      "locked_version": "1.19.2"
+    },
+    "monit": {
+      "locked_version": "0.7.1"
+    },
+    "ark": {
+      "locked_version": "0.4.2"
+    }
+  }
+}
