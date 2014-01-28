@@ -1,0 +1,5 @@
+{
+    "url": "http://www.elasticsearch.org/guide/",
+    "selector": "h1.title",
+    "tip": "これはガイドです"
+}

@@ -3,6 +3,9 @@
 	"version": "1.0.0",
 	"manifest_version": 2,
 	"description": "Overlay informations on the web page",
+    "permissions": [
+        "http://192.168.33.10/"
+    ],
 	"icons": {
 		"16": "icon16.png",
 		"48": "icon48.png",
