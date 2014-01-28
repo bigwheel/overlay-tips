@@ -8,14 +8,11 @@
 		"48": "icon48.png",
 		"128": "icon128.png"
 	},
-	"background": {
-		"scripts": ["background.js"]
-	},
-	"permissions" : [
-		"tabs"
-	],
-	"page_action": {
-		"default_icon": "icon48.png",
-		"default_title": "Cut the needless parameters in Google search result url."
-	}
+    "content_scripts": [
+        {
+            "matches": ["http://www.google.com/*"],
+            "css": [],
+            "js": ["myscript.js"]
+        }
+    ]
 }
