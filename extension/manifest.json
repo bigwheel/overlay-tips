@@ -10,9 +10,9 @@
 	},
     "content_scripts": [
         {
-            "matches": ["http://www.google.com/*"],
+            "matches": ["http://www.elasticsearch.org/*"],
             "css": [],
-            "js": ["myscript.js"]
+            "js": ["jquery-2.1.0.min.js", "myscript.js"]
         }
     ]
 }
