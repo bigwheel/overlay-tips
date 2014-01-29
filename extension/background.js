@@ -1,16 +1,19 @@
-//if (localStorage["extensionIsEnable"] === undefined)
-//    localStorage["extensionIsEnable"] = true;
+if (localStorage["extensionIsEnable"] === undefined) {
+    localStorage["extensionIsEnable"] = "true";
+}
 
 chrome.browserAction.onClicked.addListener(function(tab) {
-//    localStorage["extensionIsEnable"] = !localStorage["extensionIsEnable"];
-//
-//    if (localStorage["extensionIsEnable"])
-//        chrome.browserAction.setTitle("overlay tips");
-//    else
-        chrome.browserAction.setTitle({ "title": "is killed. why?"});
+    //localStorage["extensionIsEnable"] = !localStorage["extensionIsEnable"];
 
-    var action_url = "javascript:window.print();";
-    chrome.tabs.update(tab.id, {url: action_url});
+    if (localStorage["extensionIsEnable"] === "true") {
+localStorage["extensionIsEnable"] = "false";
+        //chrome.browserAction.setTitle({ "title": "is killed. why?" });
+        console.log("test2");
+    } else {
+localStorage["extensionIsEnable"] = "true";
+        //chrome.browserAction.setTitle({ "title": "is killed. why?" });
+        console.log("test");
+    }
 });
 //chrome.browserAction.onClicked.addListener(function(tab) {
 //    var viewTabUrl = chrome.extension.getURL('icon48_disable.png');
