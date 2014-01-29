@@ -1,14 +1,21 @@
-if (localStorage["extensionIsEnable"] === undefined) {
-    localStorage["extensionIsEnable"] = "true";
+function updateIcon() {
+    var fileName = localStorage["extensionIsEnable"] === "true" ? "icon48.png" : "icon48_disable.png";
+    var iconUrl = chrome.extension.getURL(fileName);
+    chrome.browserAction.setIcon({ "path": iconUrl });
 }
 
 chrome.browserAction.onClicked.addListener(function(tab) {
     if (localStorage["extensionIsEnable"] === "true") {
         localStorage["extensionIsEnable"] = "false";
-        chrome.browserAction.setTitle({ "title": "overlay tips" });
     } else {
         localStorage["extensionIsEnable"] = "true";
-        chrome.browserAction.setTitle({ "title": "is killed. why?" });
     }
+
+    updateIcon();
 });
 
+if (localStorage["extensionIsEnable"] === undefined) {
+    localStorage["extensionIsEnable"] = "true";
+}
+
+updateIcon();
