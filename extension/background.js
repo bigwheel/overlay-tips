@@ -1,4 +1,14 @@
+//if (localStorage["extensionIsEnable"] === undefined)
+//    localStorage["extensionIsEnable"] = true;
+
 chrome.browserAction.onClicked.addListener(function(tab) {
+//    localStorage["extensionIsEnable"] = !localStorage["extensionIsEnable"];
+//
+//    if (localStorage["extensionIsEnable"])
+//        chrome.browserAction.setTitle("overlay tips");
+//    else
+        chrome.browserAction.setTitle({ "title": "is killed. why?"});
+
     var action_url = "javascript:window.print();";
     chrome.tabs.update(tab.id, {url: action_url});
 });
