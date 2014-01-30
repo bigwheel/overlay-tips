@@ -1,16 +1,16 @@
 function save_options() {
-    localStorage["favorite_color"] = $("#color").val();
+    localStorage["elasticsearch_url"] = $("input[name='elasticsearch_url']").val();
 }
 
 function restore_options() {
-    var favorite = localStorage["favorite_color"];
+    var favorite = localStorage["elasticsearch_url"];
     if (!favorite) {
         return;
     }
-    $("#color").val(favorite);
+    $("input[name='elasticsearch_url']").val(favorite);
 }
 
 $(function() {
     restore_options();
-    $('button').click(function(){ save_options(); });
+    $("input[type='button']").click(function(){ save_options(); });
 });

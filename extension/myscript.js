@@ -1,8 +1,8 @@
 $(function() {
-    chrome.extension.sendRequest({}, function(extensionIsEnable) {
-        if (extensionIsEnable === "true") {
+    chrome.extension.sendRequest({}, function(ls) {
+        if (ls.extensionIsEnable === "true") {
             $.post(
-                "http://192.168.33.10:9200/overlay_tips/tip/_search",
+                ls.elasticsearch_url + "_search",
                 JSON.stringify({ query: { term: { url: location.href } } })
             ).done(
                 function(result, textStatus, jqXHR) {

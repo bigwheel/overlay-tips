@@ -7,16 +7,12 @@
 
 <body>
 
-ElasticSearchのURLをtypeまで含めて、最後のスラッシュをつけて(例えば: "http://192.168.33.10:9200/overlay_tips/tip/"):
-:
-<select id="color">
-    <option value="red">red</option>
-    <option value="green">green</option>
-    <option value="blue">blue</option>
-    <option value="yellow">yellow</option>
-</select>
+<form>
+    ElasticSearchのURLをtypeまで含めて、最後のスラッシュをつけて(例えば: "http://192.168.33.10:9200/overlay_tips/tip/"):
+    :
+    <input type="text" name="elasticsearch_url" size=100 placeholder="http://192.168.33.10:9200/overlay_tips/tip/" />
+    <input type="button" value="保存" />
+</form>
 
-<br>
-<button>Save</button>
 </body>
 </html>

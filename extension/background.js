@@ -23,6 +23,9 @@ if (localStorage["extensionIsEnable"] === undefined) {
 updateIcon();
 
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
-    sendResponse(localStorage["extensionIsEnable"]);
+    sendResponse({
+        extensionIsEnable: localStorage["extensionIsEnable"],
+        elasticsearch_url: localStorage["elasticsearch_url"]
+    });
 });
 
