@@ -25,3 +25,6 @@ updateIcon();
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
     sendResponse(localStorage["extensionIsEnable"]);
 });
+
+//ElasticSearchのURLをtypeまで含めて、最後のスラッシュをつけて(例えば: "http://192.168.33.10:9200/overlay_tips/tip/"):
+
