@@ -6,7 +6,8 @@
     "options_page": "options.html",
     "browser_action": {
         "default_icon": "icon48.png",
-        "default_title": "overlay tips"
+        "default_title": "overlay tips",
+        "default_popup": "popup.html"
     },
     "permissions": [
         "http://192.168.33.10/"
