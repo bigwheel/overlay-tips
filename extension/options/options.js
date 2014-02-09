@@ -1,9 +1,9 @@
 function save_options() {
-    store.set('elasticsearch_url', $('input[name="elasticsearch_url"]').val());
+    store.set('elasticSearchUrl', $('input[name="elasticsearch_url"]').val());
 }
 
 function restore_options() {
-    var favorite = store.get('elasticsearch_url');
+    var favorite = store.get('elasticSearchUrl');
     if (!favorite) {
         return;
     }
