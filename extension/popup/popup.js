@@ -1,9 +1,9 @@
-$(function() {
-    function ArraySampleViewModel() {
-        this.number = [ {n: 1}, {n: 2}, {n: 3} ];
-    }
+function PageProperTipsViewModel() {
+    this.result = ko.observable([]);
+}
 
+$(function() {
     ko.applyBindings(new ExtensionStateViewModel(), $('form')[0]);
-    ko.applyBindings(new ArraySampleViewModel(), $('table')[0]);
+    ko.applyBindings(new PageProperTipsViewModel(), $('table')[0]);
 });
 
