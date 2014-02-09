@@ -18,7 +18,7 @@
 		"128": "icons/icon128.png"
 	},
     "background": {
-        "scripts": ["vendor/knockout-3.0.0.js", "vendor/store+json2.min.js", "share.js", "background.js"]
+        "scripts": ["vendor/jquery-2.1.0.min.js", "vendor/knockout-3.0.0.js", "vendor/store+json2.min.js", "share.js", "background.js"]
     },
     "permissions": [
         "tabs", "http://*/*", "https://*/*"
