@@ -18,7 +18,7 @@
 		"128": "icons/icon128.png"
 	},
     "background": {
-        "scripts": ["background.js"]
+        "scripts": ["vendor/store+json2.min.js", "background.js"]
     },
     "permissions": [
         "tabs", "http://*/*", "https://*/*"
