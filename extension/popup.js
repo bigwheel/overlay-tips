@@ -5,6 +5,14 @@ $(function() {
          $("input[type='checkbox']").attr("checked", false);
      }
 
+     $("input#extensionIsEnable").change(function() {
+         if ($(this).is(":checked")) {
+             localStorage["extensionIsEnable"] = "true";
+         } else {
+             localStorage["extensionIsEnable"] = "false";
+         }
+     });
+
 //    $.post(
 //        localStorage["elasticsearch_url"] + "_search",
 //        JSON.stringify({ query: { term: { url: location.href } } })
