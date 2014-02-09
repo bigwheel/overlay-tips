@@ -2,6 +2,7 @@
 if (extensionState.isEnable() === undefined) {
     extensionState.isEnable(true);
 }
+extensionState.updateBrowserActionIcon();
 
 chrome.extension.onRequest.addListener(function(_, _, sendResponse) {
     sendResponse(store.getAll());
