@@ -1,20 +1,20 @@
 $(function() {
-     if (localStorage['extensionIsEnable'] === 'true') {
-         $('input[type="checkbox"]').attr('checked', true);
-     } else {
-         $('input[type="checkbox"]').attr('checked', false);
-     }
+    if (store.get('extensionIsEnable') === true) {
+        $('input[type="checkbox"]').attr('checked', true);
+    } else {
+        $('input[type="checkbox"]').attr('checked', false);
+    }
 
-     $('input#extensionIsEnable').change(function() {
-         if ($(this).is(':checked')) {
-             localStorage['extensionIsEnable'] = 'true';
-         } else {
-             localStorage['extensionIsEnable'] = 'false';
-         }
-     });
+    $('input#extensionIsEnable').change(function() {
+        if ($(this).is(':checked')) {
+            store.set('extensionIsEnable', true);
+        } else {
+            store.set('extensionIsEnable', false);
+        }
+    });
 
 //    $.post(
-//        localStorage['elasticsearch_url'] + '_search',
+//        store.get('elasticsearch_url') + '_search',
 //        JSON.stringify({ query: { term: { url: location.href } } })
 //    ).done(
 //    function(result, textStatus, jqXHR) {

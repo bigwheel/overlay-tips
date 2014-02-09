@@ -1,6 +1,6 @@
 $(function() {
     chrome.extension.sendRequest({}, function(ls) {
-        if (ls.extensionIsEnable === 'true') {
+        if (ls.extensionIsEnable === true) {
             $.post(
                 ls.elasticsearch_url + '_search',
                 JSON.stringify({ query: { term: { url: location.href } } })

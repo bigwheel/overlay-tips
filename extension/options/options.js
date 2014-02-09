@@ -1,9 +1,9 @@
 function save_options() {
-    localStorage['elasticsearch_url'] = $('input[name="elasticsearch_url"]').val();
+    store.set('elasticsearch_url', $('input[name="elasticsearch_url"]').val());
 }
 
 function restore_options() {
-    var favorite = localStorage['elasticsearch_url'];
+    var favorite = store.get('elasticsearch_url');
     if (!favorite) {
         return;
     }
