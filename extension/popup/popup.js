@@ -1,16 +1,12 @@
+function initCheckbox() {
+    $('input[type="checkbox"]').attr('checked', store.get('extensionIsEnable'));
+}
+
 $(function() {
-    if (store.get('extensionIsEnable') === true) {
-        $('input[type="checkbox"]').attr('checked', true);
-    } else {
-        $('input[type="checkbox"]').attr('checked', false);
-    }
+    initCheckbox();
 
     $('input#extensionIsEnable').change(function() {
-        if ($(this).is(':checked')) {
-            store.set('extensionIsEnable', true);
-        } else {
-            store.set('extensionIsEnable', false);
-        }
+        store.set('extensionIsEnable', $(this).is(':checked'));
     });
 
 //    $.post(

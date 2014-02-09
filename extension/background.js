@@ -6,11 +6,7 @@ function updateIcon() {
 }
 
 chrome.browserAction.onClicked.addListener(function(tab) {
-    if (store.get('extensionIsEnable') === true) {
-        store.set('extensionIsEnable', false);
-    } else {
-        store.set('extensionIsEnable', true);
-    }
+    store.set('extensionIsEnable', !store.get('extensionIsEnable'));
 
     updateIcon();
 });
