@@ -22,10 +22,7 @@ if (store.get('extensionIsEnable') === undefined) {
 
 updateIcon();
 
-chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
-    sendResponse({
-        extensionIsEnable: store.get('extensionIsEnable'),
-        elasticsearch_url: store.get('elasticsearch_url')
-    });
+chrome.extension.onRequest.addListener(function(_, _, sendResponse) {
+    sendResponse(store.getAll());
 });
 
