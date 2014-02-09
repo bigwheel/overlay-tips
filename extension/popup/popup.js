@@ -7,6 +7,7 @@ $(function() {
 
     $('input#extensionIsEnable').change(function() {
         store.set('extensionIsEnable', $(this).is(':checked'));
+        updateBrowserActionIcon();
     });
 
 //    $.post(
