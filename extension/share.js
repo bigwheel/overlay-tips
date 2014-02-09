@@ -1,4 +1,5 @@
 function extensionStateViewModel() {
+    // 以下このViewModelの組み立て
     this.isEnable = ko.observable(store.get('extensionIsEnable'));
     this.updateBrowserActionIcon = $.proxy(function() {
         var filePath = (this.isEnable() ?
@@ -11,7 +12,11 @@ function extensionStateViewModel() {
         store.set('extensionIsEnable', newValue);
         this.updateBrowserActionIcon();
     }, this);
-}
 
-extensionState = new extensionStateViewModel();
+    // localStorageへ格納されている値の初期化
+    if (this.isEnable() === undefined) {
+        this.isEnable(true);
+    }
+    this.updateBrowserActionIcon();
+}
 

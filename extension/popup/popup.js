@@ -1,5 +1,5 @@
 $(function() {
-    ko.applyBindings(extensionState);
+    ko.applyBindings(new extensionStateViewModel());
 //
 //    $.post(
 //        store.get('elasticsearch_url') + '_search',
