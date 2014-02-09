@@ -18,7 +18,13 @@
 		"128": "icons/icon128.png"
 	},
     "background": {
-        "scripts": ["vendor/jquery-2.1.0.min.js", "vendor/knockout-3.0.0.js", "vendor/store+json2.min.js", "share.js", "background.js"]
+        "scripts": [
+            "vendor/jquery-2.1.0.min.js",
+            "vendor/knockout-3.0.0.js",
+            "vendor/store+json2.min.js",
+            "share.js",
+            "background.js"
+        ]
     },
     "permissions": [
         "tabs", "http://*/*", "https://*/*"
@@ -27,7 +33,13 @@
         {
             "matches": ["http://www.elasticsearch.org/*"],
             "css": [],
-            "js": ["vendor/jquery-2.1.0.min.js", "content_script.js"]
+            "js": [
+                "vendor/jquery-2.1.0.min.js",
+                "vendor/store+json2.min.js",
+                "vendor/knockout-3.0.0.js",
+                "share.js",
+                "content_script.js"
+            ]
         }
     ],
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"

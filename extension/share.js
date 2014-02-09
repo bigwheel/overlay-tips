@@ -20,3 +20,9 @@ function ExtensionStateViewModel() {
     this.updateBrowserActionIcon();
 }
 
+function queryToElasticSearchByUrl(elasticSearchUrl, currentUrl) {
+    return $.post(
+        elasticSearchUrl + '_search',
+        JSON.stringify({ query: { term: { url: currentUrl } } })
+    );
+}
