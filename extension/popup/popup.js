@@ -5,6 +5,7 @@ function PageProperTipsViewModel() {
             $.proxy(function(result) {
                 $.each(result.hits.hits, $.proxy(function(_, hit) {
                     var data = hit._source;
+
                     var result = this.result();
                     result.push({ tip: data.tip, selector: data.selector });
                     this.result(result);
