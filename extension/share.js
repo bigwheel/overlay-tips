@@ -1,4 +1,4 @@
-function extensionStateViewModel() {
+function ExtensionStateViewModel() {
     // 以下このViewModelの組み立て
     this.isEnable = ko.observable(store.get('extensionIsEnable'));
     this.updateBrowserActionIcon = $.proxy(function() {

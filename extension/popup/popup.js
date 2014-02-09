@@ -3,7 +3,7 @@ function ArraySampleViewModel() {
 }
 
 $(function() {
-    ko.applyBindings(new extensionStateViewModel(), $('form')[0]);
+    ko.applyBindings(new ExtensionStateViewModel(), $('form')[0]);
     ko.applyBindings(new ArraySampleViewModel(), $('table')[0]);
 });
 
