@@ -3,10 +3,10 @@ $(function() {
         if (localStorage.extensionIsEnable === true) {
             queryToElasticSearchByUrl(localStorage.elasticSearchUrl, location.href).
                 done(function(result) {
-                var hits = result.hits.hits;
-                if (hits.length != 0) {
-                    var data = hits[0]._source;
-                    $(data.selector).append('<br /> ' + data.tip);
+                if (result.exists) {
+                    $.each(result._source.tips, $.proxy(function(_, tip) {
+                        $(tip.selector).append('<br /> ' + tip.tip);
+                    }, this));
                 }
             }
             )
