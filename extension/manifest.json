@@ -27,7 +27,7 @@
         {
             "matches": ["http://www.elasticsearch.org/*"],
             "css": [],
-            "js": ["jquery-2.1.0.min.js", "myscript.js"]
+            "js": ["vendor/jquery-2.1.0.min.js", "myscript.js"]
         }
     ]
 }
