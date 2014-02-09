@@ -4,3 +4,12 @@ function updateBrowserActionIcon() {
     var iconUrl = chrome.extension.getURL(fileName);
     chrome.browserAction.setIcon({ 'path': iconUrl });
 }
+
+extensionState = {
+    isEnable: ko.observable(store.get('extensionIsEnable'))
+};
+extensionState.isEnable.subscribe(function(newValue) {
+    store.set('extensionIsEnable', newValue);
+    updateBrowserActionIcon();
+});
+

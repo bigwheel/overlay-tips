@@ -1,15 +1,6 @@
-function initCheckbox() {
-    $('input[type="checkbox"]').attr('checked', store.get('extensionIsEnable'));
-}
-
 $(function() {
-    initCheckbox();
-
-    $('input#extensionIsEnable').change(function() {
-        store.set('extensionIsEnable', $(this).is(':checked'));
-        updateBrowserActionIcon();
-    });
-
+    ko.applyBindings(extensionState);
+//
 //    $.post(
 //        store.get('elasticsearch_url') + '_search',
 //        JSON.stringify({ query: { term: { url: location.href } } })
