@@ -1,19 +1,17 @@
 function PageProperTipsViewModel() {
     this.result = ko.observable([]);
-    chrome.tabs.getSelected(function(tab) {
+    chrome.tabs.getSelected($.proxy(function(tab) {
         queryToElasticSearchByUrl(store.get('elasticSearchUrl'), tab.url).done(
-            function(result) {
-                $.each(result.hits.hits, function(_, hit) {
+            $.proxy(function(result) {
+                $.each(result.hits.hits, $.proxy(function(_, hit) {
                     var data = hit._source;
-                    //this.result(
-                    //    this.result().push({ tip: data.tip })
-                    //);
-                    console.log(data);
-                    //$(data.selector).append('<br /> ' + data.tip);
-                });
-            }
+                    var result = this.result();
+                    result.push({ tip: data.tip, selector: data.selector });
+                    this.result(result);
+                }, this));
+            }, this)
         );
-    });
+    }, this));
 }
 
 $(function() {

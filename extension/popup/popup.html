@@ -7,7 +7,7 @@
 <script type="text/javascript" src="popup.js"></script>
 </head>
 
-<body style="width: 400px">
+<body style="width: 800px">
 <form>
     <input type="checkbox" data-bind="checked: isEnable">プラグインは有効
 </form>
@@ -15,11 +15,13 @@
 <table>
     <thead>
         <tr>
+            <th>selector</th>
             <th>tip</th>
         </tr>
     </thead>
     <tbody data-bind="foreach: result">
     <tr>
+        <td data-bind="text: selector"></td>
         <td data-bind="text: tip"></td>
     </tr>
     </tbody>
