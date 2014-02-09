@@ -13,10 +13,13 @@ function PageProperTipsViewModel() {
             }, this)
         );
     }, this));
+    this.submit = function() { return false; };
 }
 
 $(function() {
-    ko.applyBindings(new ExtensionStateViewModel(), $('form')[0]);
-    ko.applyBindings(new PageProperTipsViewModel(), $('table')[0]);
+    ko.applyBindings(new ExtensionStateViewModel(),
+                     $('input#extension_is_enable')[0]);
+    ko.applyBindings(new PageProperTipsViewModel(),
+                     $('form#tips')[0]);
 });
 

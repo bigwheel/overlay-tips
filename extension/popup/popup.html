@@ -8,24 +8,25 @@
 </head>
 
 <body style="width: 700px">
-<form>
-    <input type="checkbox" data-bind="checked: isEnable">プラグインは有効
-</form>
+<input type="checkbox" id="extension_is_enable" data-bind="checked: isEnable">プラグインは有効
 
-<table>
-    <thead>
-        <tr>
-            <th>selector</th>
-            <th>tip</th>
-        </tr>
-    </thead>
-    <tbody data-bind="foreach: result">
-        <tr>
-            <td><input type="text" data-bind="value: selector" /></td>
-            <td><textarea data-bind="value: tip" /></td>
-        </tr>
-    </tbody>
-</table>
+<form id="tips" data-bind="submit: submit">
+    <table>
+        <thead>
+            <tr>
+                <th>selector</th>
+                <th>tip</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: result">
+            <tr>
+                <td><input type="text" data-bind="value: selector" /></td>
+                <td><textarea data-bind="value: tip"></textarea></td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="submit">送信</button>
+</form>
 
 </body>
 </html>
